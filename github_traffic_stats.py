@@ -11,7 +11,7 @@ def collect(user, repo, token, org):
         org = user
 
     db = __load_db(repo=repo)
-    gh = github.GitHub(access_token=token)
+    gh = github.GitHub(token=token)
     try:
         gh.repos(org, repo).get()
     except Exception:
